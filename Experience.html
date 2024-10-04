@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1, width=device-width">
+
+	
+	<link rel="stylesheet" href="index.js">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+    <style>
+        
+body {
+    margin: 0;
+    line-height: normal;
+}
+
+.icon {
+    
+    position: relative;
+    height: 70px;
+}
+.figma {
+    width: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.title {
+    
+    position: relative;
+    line-height: 100%;
+    cursor: pointer;
+}
+
+.navigation-pill1 {
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    cursor: pointer;
+}
+.navigation-pill-list {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 8px;
+}
+.button {
+    flex: 1;
+    border-radius: 8px;
+    background-color: #e3e3e3;
+    border: 1px solid #767676;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.button:active{
+  transform: translateY(10px);
+  
+}
+.button2:active{
+    transform: translateY(10px);
+    
+  }
+  * {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important; 
+    -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important; 
+    outline: none !important;
+}
+  a{
+    color: black;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+ 
+
+  .social-icons {
+    width: 23px;
+    position: relative;
+    height: 23px;
+    cursor: pointer;
+    }
+    .contact {
+    width: 71px;
+    position: relative;
+    line-height: 100%;
+    display: inline-block;
+    flex-shrink: 0;
+    cursor: pointer;
+    }
+    .button2 {
+    width: 104px;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #25d366;
+    box-sizing: border-box;
+    height: 32px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 8px 8px 20px;
+    gap: 5px;
+    color: #000;
+    cursor: pointer;
+    }
+.header-auth {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+.header {
+    align-self: stretch;
+    background-color: #fff;
+    border-bottom: 1px solid #d9d9d9;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+    padding-top: 0px;
+    padding: 16px;
+    padding-left: 30px;
+    gap: 0px 24px;
+    
+}
+
+
+.title6 {
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    line-height: 120%;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    animation: typing 5s forwards, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.subtitle {
+    font-size: 25px;
+    line-height: 120%;
+    color: hsl(0, 0%, 0%);
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(21, end), blink-caret .5s step-end infinite alternate;
+}
+
+.text-content-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.hero-basic {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 50px;
+    padding: 20px;
+}
+
+.video-text-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    filter: brightness(85%);
+}
+.heading {
+    align-self: stretch;
+    position: relative;
+    letter-spacing: -0.02em;
+    line-height: 120%;
+    font-weight: 600;
+}
+.subheading {
+    align-self: stretch;
+    position: relative;
+    font-size: 20px;
+    line-height: 120%;
+    color: #757575;
+}
+.text-content-heading {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.image-ico {
+    border-radius: 10px;
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+    min-width: 160px;
+}
+.body-text-for {
+    align-self: stretch;
+    position: relative;
+    font-size: 16px;
+    line-height: 140%;
+    color: #757575;
+}
+.button-group {
+    width: 208px;
+    height: 40px;
+    display: none;
+}
+.body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px;
+    min-width: 160px;
+}
+.card {
+    flex: 1;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 38px 24px 24px;
+    gap: 24px;
+    min-width: 240px;
+}
+.card1 {
+    flex: 1;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 29px 24px 24px;
+    gap: 24px;
+    min-width: 240px;
+}
+.body2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-width: 160px;
+}
+.card2 {
+    flex: 1;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 24px;
+    gap: 24px;
+    min-width: 240px;
+}
+.cards {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 15px 0px 0px;
+    gap: 20px 51px;
+}
+.cards1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 11px 0px 0px;
+    gap: 20px 68px;
+}
+.card-grid-image {
+    align-self: stretch;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 64px;
+    gap: 48px;
+    font-size: 24px;
+}
+.use-cases {
+    flex: 1;
+    position: relative;
+    line-height: 140%;
+    font-weight: 600;
+}
+.text-strong {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.title13 {
+    align-self: stretch;
+    height: 38px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0px 0px 16px;
+    box-sizing: border-box;
+}
+.ui-design {
+    flex: 1;
+    position: relative;
+    line-height: 140%;
+}
+.text-link-list-item {
+    align-self: stretch;
+    height: 22px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.text-link-list-item1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.text-link-list {
+    width: 255.8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+}
+.title14 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0px 0px 16px;
+}
+.text-link-list-item11 {
+    width: 452px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.footer {
+    align-self: stretch;
+    background-color: #fff;
+    border-top: 1px solid #d9d9d9;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 28px 13px 17px 92px;
+    gap: 42px 20px;
+}
+.header-parent {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 16px;
+    color: #1e1e1e;
+    font-family: Inter;
+}
+.navigation-pill {
+    padding: 8px;
+    cursor: pointer
+}
+.navigation-pill1 {
+    padding: 8px;
+    cursor: pointer
+}
+.navigation-pill:hover{
+    border-radius: 8px;
+    background-color: rgb(245, 245, 245);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.navigation-pill1:hover{
+    border-radius: 8px;
+    background-color: rgb(245, 245, 245);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.navigation-pill1:active {
+    transform: scale(0.9);
+  }
+  .navigation-pill:active {
+    transform: scale(0.9);
+  }
+
+@media screen and (max-width: 1024px) {
+    .hero-basic {
+        font-size: 48px;
+        height: 60vh;
+    }
+
+    .subtitle {
+        font-size: 28px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .hero-basic {
+        font-size: 32px;
+        height: 60vh;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .title6 {
+        font-size: 24px;
+    }
+}
+@media screen and (max-width: 480px) {
+
+    .subtitle {
+        font-size: 15px;
+    }
+
+    .title6 {
+        font-size: 30px;
+    }
+}
+.vb-enterprisese {
+    position: relative;
+}
+.header-text {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.open-source-is {
+    flex: 1;
+    position: relative;
+}
+.body {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+.icon1 {
+    width: 38px;
+    position: relative;
+    height: 35px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.social-icons1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 21px;
+}
+.header-text-parent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 21px;
+}
+.asd {
+    flex: 1;
+    border-radius: 8px;
+    background-color: #000;
+    border: 1px solid #d9d9d9;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 24px;
+    min-width: 240px;
+    font-size: 24px;
+}
+.image-icon {
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+    display: none;
+    min-width: 160px;
+}
+.explore {
+    width: 89px;
+    position: relative;
+    display: inline-block;
+    flex-shrink: 0;
+}
+.header-text1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    font-size: 24px;
+}
+.button-text {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 0px;
+}
+.header-text-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.header-text2 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 24px;
+}
+.fgfh {
+    flex: 1;
+    border-radius: 8px;
+    background-color: #000;
+    border: 1px solid #d9d9d9;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 24px;
+    gap: 24px;
+    min-width: 240px;
+}
+.ert {
+    flex: 1;
+    border-radius: 8px;
+    background-color: #000;
+    border: 1px solid #d9d9d9;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 24px;
+    min-width: 240px;
+}
+.fm {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 11px 0px 0px;
+    gap: 20px 59px;
+}
+.sdf {
+    width: 100%;
+    position: relative;
+    background-color: #131313;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 26px 37px 55px 40px;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 16px;
+    color: #fff;
+    font-family: Inter;
+}
+
+.copyright-2024-designed {
+    flex: 1;
+    position: relative;
+}
+.text {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.copyright {
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px 100px 10px 6px;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 12px;
+    color: #131313;
+    font-family: Inter;
+}
+
+
+
+
+
+        .img-20230122-170255-hdr-1-icon {
+  	flex: 1;
+  	position: relative;
+  	border-radius: 10px;
+  	max-width: 100%;
+  	overflow: hidden;
+  	height: 386px;
+  	object-fit: cover;
+}
+.experience {
+  	align-self: stretch;
+  	position: relative;
+  	letter-spacing: -0.02em;
+  	line-height: 120%;
+  	font-weight: 600;
+}
+.with-over-301 {
+  	align-self: stretch;
+  	position: relative;
+  	font-size: 16px;
+  	line-height: 140%;
+  	color: #757575;
+}
+.div12 {
+  	align-self: stretch;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	gap: 28px;
+}
+.body2 {
+  	flex: 1;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	padding: 70px 0px 0px;
+  	box-sizing: border-box;
+  	min-width: 160px;
+}
+.expre {
+  	width: 100%;
+  	position: relative;
+  	border-radius: 8px;
+  	background-color: #fff;
+  	border: 1px solid #d9d9d9;
+  	box-sizing: border-box;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	flex-wrap: wrap;
+  	align-content: flex-start;
+  	padding: 24px;
+  	gap: 24px;
+  	min-width: 240px;
+  	text-align: left;
+  	font-size: 24px;
+  	color: #1e1e1e;
+  	font-family: Inter;
+}
+
+
+    </style>
+
+
+
+
+</head>
+
+<body>
+	<div class="header-parent">
+		<div class="header">
+			<div class="block">
+				<div class="figma"><a href="index.html">
+					<img class="icon" alt="" src="vb.png"></a>
+
+				</div>
+			</div>
+			<div class="navigation-pill-list">
+				<div class="navigation-pill">
+					<div class="title"><a href="index.html">Home</a></div>
+				</div>
+				<div class="navigation-pill1"><a href="#">
+					<div class="title"><a href="Experience.html">Experience</a></div>
+				</div>
+
+
+				<div class="navigation-pill1">
+					<div class="title"><a href="services.html">Services</a></div>
+				</div>
+				<div class="navigation-pill1">
+					<div class="title"><a href="about.html">About</a></div>
+				</div>
+			</div>
+			<div class="header-auth">
+				<a href="Captcha.html">
+					<div class="button">
+						<div class="title">
+							Quotation</div>
+					</div>
+				</a><a href="https://wa.me/+918956817729?text=Well Done Amar!">
+					<div class="button2">
+						<img class="social-icons" alt="" src="Social Icons.svg">
+						<div class="contact">Contact</div>
+					</div>
+				</a>
+
+			</div>
+		</div>
+
+		<div class="expre" id="exper">
+			<img class="img-20230122-170255-hdr-1-icon" alt="" src="IMG_20230122_170255_HDR.jpg">
+			<div class="body2">
+			<div class="div12">
+			<div class="experience">Vishwanath C Biradar</div>
+			<div class="with-over-301">With over 30 years of experience as an interior civil contractor, I have successfully managed a wide range of residential and commercial projects.</div>
+			</div>
+			</div>
+			</div>
+
+
+
+
+            <div class="sdf">
+                <div class="fm">
+                    <div class="asd">
+                        <div class="header-text-parent">
+                            <div class="header-text">
+                                <b class="vb-enterprisese">VB Enterprisese</b>
+                            </div>
+                            <div class="body">
+                                <div class="open-source-is">VB Enterprises is a renowned interior civil contracting firm with 
+                                    decades of experience in delivering high-quality residential and 
+                                    client expectations maintain standards of craftsmanship and safety.
+                                </div>
+                            </div>
+                            <div class="social-icons1">
+                                <img class="icon1" alt="" src="Linkedin.svg">
+                                <img class="icon1" alt="" src="insta.svg">
+                                <img class="icon1" alt="" src="facebook.svg">
+                                <img class="icon1" alt="" src="twitter.svg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fgfh">
+                        <img class="image-icon" alt="" src="Image.png">
+                        <div class="header-text-group">
+                            <div class="header-text1">
+                                <b class="explore">Explore</b>
+                            </div>
+                            <div class="button-text">
+                                <b class="vb-enterprisese">Go pro</b>
+                            </div>
+                            <div class="button-text">
+                                <b class="vb-enterprisese">Explore Designs</b>
+                            </div>
+                            <div class="button-text">
+                                <b class="vb-enterprisese">Create Designs</b>
+                            </div>
+                            <div class="button-text">
+                                <b class="vb-enterprisese">Playoffs</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fgfh">
+                        <img class="image-icon" alt="" src="Image.png">
+                        <div class="header-text-parent">
+                            <div class="header-text2">
+                                <b class="vb-enterprisese">Innovate</b>
+                            </div>
+                            <div class="button-text">
+                                <b class="vb-enterprisese">Tags</b>
+                            </div>
+                            <div class="button-text">
+                                <b class="vb-enterprisese">API</b>
+                            </div>
+                            <div class="button-text">
+                                <b class="vb-enterprisese">Places</b>
+                            </div>
+                            <div class="button-text">
+                                <b class="vb-enterprisese">Creative Markets</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ert">
+                        <div class="header-text-parent">
+                            <div class="header-text2">
+                                <b class="open-source-is">About</b>
+                            </div>
+                            <div class="button-text">
+                                <b class="open-source-is">Community</b>
+                            </div>
+                            <div class="button-text">
+                                <b class="vb-enterprisese">Designers</b>
+                            </div>
+                            <div class="button-text">
+                                <b class="open-source-is">Support</b>
+                            </div>
+                            <div class="button-text">
+                                <b class="open-source-is">Terms of service</b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="copyright">
+                <div class="text">
+                    <div class="copyright-2024-designed">Copyright ©2024: Designed by <a href="https://www.linkedin.com/in/ambir513"> Amar Biradar</a></div>
+                </div>
+            </div>
+    
+    
+    </body>
+    
+    </html>

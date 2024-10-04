@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Captcha Elements</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" />
+
+  <style>
+    html,
+    body {
+      display: grid;
+      height: 100%;
+      place-items: center;
+      font-family: "poppins", sans-serif;
+    }
+
+
+    #let {
+      border: 2px solid black;
+      border-radius: 10px;
+      width: 370px;
+      height: 410px;
+      background-color: #ffffff;
+      border-bottom: 2px solid black;
+    }
+
+    #let .head {
+      background-color: #fffbf3;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      padding-top: 20px;
+      font-size: 30px;
+      height: 50px;
+    }
+
+    #captcha {
+      display: inline;
+      min-width: 100px;
+      font-size: 24px;
+      background-color: rgb(247, 247, 60);
+    }
+    * {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important; 
+    -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important; 
+    outline: none !important;
+}
+  a{
+    color: black;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+ 
+
+    button {
+
+      width: 80px;
+      position: relative;
+      background-color: #fff;
+      border-radius: 8px;
+      border: 1px solid #000;
+      box-sizing: border-box;
+      height: 32px;
+      overflow: hidden;
+      flex-shrink: 0;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding-left: 10px;
+      gap: 8px;
+      text-align: left;
+      font-size: 16px;
+      font-family: Inter;
+      color: #000;
+      cursor: pointer;
+    }
+    .button:active{
+        translate: 0 0.225em;
+  
+}
+
+
+    #otp:hover {
+      transition: 5s;
+    }
+
+    .label1 {
+      position: relative;
+      letter-spacing: 1.25px;
+      line-height: 16px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .text1 {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 4px 8px 4px 6px;
+    }
+
+    .containeda-text1 {
+      position: relative;
+      border-radius: 4px;
+      background-color: #000;
+      width: 113px;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 6px 6px 6px 8px;
+      box-sizing: border-box;
+      text-align: left;
+      font-size: 14px;
+      color: #fff;
+      font-family: Roboto;
+      cursor: pointer;
+      
+    }
+    .containeda-text1:active{
+      translate: 0 0.225em;
+  
+  
+}
+
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+
+    .success {
+      color: green;
+      font-size: 14px;
+    }
+
+    input {
+      width: 150px;
+      position: relative;
+      border-radius: 5px;
+      background-color: #fff;
+      border: 1px solid #000;
+      box-sizing: border-box;
+      height: 20px;
+    }
+
+    .basic-quotation {
+      position: relative;
+      white-space: pre-wrap;
+    }
+
+    .header-text {
+      width: 221px;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 0px 0px 0px 16px;
+      box-sizing: border-box;
+    }
+
+    .header-text-wrapper {
+      flex: 1;
+      background-color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    .asd {
+      width: 100%;
+      position: relative;
+
+      border-radius: 8px 8px 0px 0px;
+      background-color: #000;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      padding: 18px 24px 18px 37px;
+      box-sizing: border-box;
+      min-width: 240px;
+      text-align: left;
+      font-size: 32px;
+      color: #fff;
+      font-family: Poppins;
+    }
+
+
+    #enter {
+      width: 90px;
+    }
+    
+.tst{
+  font-size: 15px;
+}
+
+.tstt{
+  color: #E4003A;
+}
+.tstt:active{
+
+   translate: 0 0.225em;
+}
+  </style>
+</head>
+
+<body onload="getotp()">
+  <script>
+    var otparray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+      'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+
+    var st = ""
+    function getotp() {
+      var otpdata = ""
+      for (i = 0; i < 6; i++) {
+        otpdata = otpdata + otparray[Math.floor(Math.random() * otparray.length)];
+
+      }
+      document.getElementById("captcha").innerHTML = otpdata;
+      st = otpdata
+    }
+    function login() {
+      var inputUser = document.getElementById("std").value;
+      var inputPass = document.getElementById("pass").value;
+      var inputOTP = document.getElementById("enter").value;
+
+      document.getElementById("errorMessage").innerHTML = "";
+
+      if (inputUser == "amar") {
+
+        if (inputPass == "amar") {
+
+          if (inputOTP == st) {
+            // Show login successful message
+            document.getElementById("errorMessage").innerHTML = "Login Successful!";
+            document.getElementById("errorMessage").className = "success";
+            // Open the new tab after 3 seconds (3000 milliseconds)
+            setTimeout(function () {
+              window.open("cv.html");
+            }, 3000);
+          } else {
+            document.getElementById("errorMessage").innerHTML = "Invalid Captcha Code!";
+
+          }
+        } else {
+          document.getElementById("errorMessage").innerHTML = "Invalid Password!";
+
+        }
+
+      } else {
+        document.getElementById("errorMessage").innerHTML = "Invalid Login ID!";
+      }
+
+    }
+  </script>
+  <center>
+    <form name="frm">
+
+      <div id="let">
+
+
+        <div class="asd">
+          <div class="header-text-wrapper">
+            <div class="header-text">
+              <b class="basic-quotation">Basic&nbsp;Quotation </b>
+            </div>
+          </div>
+        </div>
+
+        <br /><br />
+        Login ID : &nbsp;&nbsp;<input type="text" id="std"><br /><br />
+        Password : &nbsp;&nbsp;<input type="password" id="pass" /><br /><br />
+        <i><del>
+            <p id="captcha"></p>
+          </del></i>&nbsp;&nbsp;
+        <button value="Refresh" onclick="getotp()">Refresh</button><br><br>
+        Enter Captcha Code:&nbsp;&nbsp;<input type="text" id="enter"><br><br>
+        <div id="errorMessage" class="error"></div><!-- Error message section -->
+        <div class="containeda-text1" value="Download" onclick="login()">
+          <div class="text1">
+            <div class="label1">Download</div>
+          </div>
+        </div>
+
+
+      </div>
+    </form><br>
+    <Span class="tst"> If you don't have an ID and password, <a href="https://wa.me/+918956817729?text=I need an ID and password to download the quotation."><span class="tstt">click here.</span></a></Span>
+
+    
+    
+    
+  </center>
+</body>
+
+</html>
