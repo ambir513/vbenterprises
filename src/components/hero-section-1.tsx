@@ -10,6 +10,7 @@ import { TextureButton } from "./ui/texture-button";
 import { UserButton, useUser } from "@clerk/nextjs";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import type { Variants } from "framer-motion";
 import Image from "next/image";
 const transitionVariants = {
   item: {
@@ -23,14 +24,15 @@ const transitionVariants = {
       filter: "blur(0px)",
       y: 0,
       transition: {
-        type: "spring" as const, // ✅ IMPORTANT FIX
+        type: "spring" as const, // ✅ THIS is important
         bounce: 0.3,
         duration: 1.5,
       },
     },
   },
+} satisfies {
+  item: Variants;
 };
-
 
 export function HeroSection() {
   const { theme, resolvedTheme } = useTheme();
