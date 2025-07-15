@@ -11,7 +11,6 @@ import { UserButton, useUser } from "@clerk/nextjs";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-
 const transitionVariants = {
   item: {
     hidden: {
@@ -24,13 +23,14 @@ const transitionVariants = {
       filter: "blur(0px)",
       y: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const, // ✅ IMPORTANT FIX
         bounce: 0.3,
         duration: 1.5,
       },
     },
   },
 };
+
 
 export function HeroSection() {
   const { theme, resolvedTheme } = useTheme();
