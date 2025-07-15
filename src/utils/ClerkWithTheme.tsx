@@ -1,7 +1,7 @@
 "use client";
 
 import { ClerkProvider } from "@clerk/nextjs";
-import { dark, light } from "@clerk/themes";
+import { dark } from "@clerk/themes"; // ✅ Only dark is available
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
@@ -16,7 +16,8 @@ export function ClerkWithTheme({ children }: { children: React.ReactNode }) {
 
   if (!isMounted || !resolvedTheme) return null;
 
-  const baseTheme = resolvedTheme === "dark" ? dark : light;
+  // Use dark theme for dark mode, default (light) otherwise
+  const baseTheme = resolvedTheme === "dark" ? dark : undefined;
 
   return (
     <ClerkProvider
