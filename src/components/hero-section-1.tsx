@@ -12,7 +12,10 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import type { Variants } from "framer-motion";
 import Image from "next/image";
-const transitionVariants = {
+
+const transitionVariants: {
+  item: Variants;
+} = {
   item: {
     hidden: {
       opacity: 0,
@@ -24,16 +27,13 @@ const transitionVariants = {
       filter: "blur(0px)",
       y: 0,
       transition: {
-        type: "spring" as const, // ✅ THIS is important
+        type: "spring" as const, // 👈 Important fix
         bounce: 0.3,
         duration: 1.5,
       },
     },
   },
-} satisfies {
-  item: Variants;
 };
-
 export function HeroSection() {
   const { theme, resolvedTheme } = useTheme();
   const [isDark, setIsDark] = useState(false);
