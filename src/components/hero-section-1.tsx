@@ -10,6 +10,7 @@ import { TextureButton } from "./ui/texture-button";
 import { UserButton, useUser } from "@clerk/nextjs";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const transitionVariants = {
   item: {
@@ -190,19 +191,20 @@ export function HeroSection() {
                   }`}
                 />
                 <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
-                  <img
+                  <Image
                     className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
                     src="https://res.cloudinary.com/dvvxpzajh/image/upload/v1752416367/WhatsApp_Image_2025-07-12_at_1.00.26_PM_lq0fyo.jpg"
                     alt="app screen"
-                    width="2700"
-                    height="1440"
+                    width={2700}
+                    height={1440}
                   />
-                  <img
+
+                  <Image
                     className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border dark:hidden"
                     src="https://res.cloudinary.com/dvvxpzajh/image/upload/v1752416366/WhatsApp_Image_2025-07-12_at_1.00.46_PM_rj35n6.jpg"
                     alt="app screen"
-                    width="2700"
-                    height="1440"
+                    width={2700}
+                    height={1440}
                   />
                 </div>
               </div>
@@ -222,79 +224,86 @@ export function HeroSection() {
               </Link>
             </div>
             <div className="group-hover:blur-xs mx-auto mt-12 grid max-w-2xl grid-cols-4 gap-x-12 gap-y-8 transition-all duration-500 group-hover:opacity-50 sm:gap-x-16 sm:gap-y-14">
-              <div className="flex">
-                <img
-                  className="mx-auto h-5 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/nvidia.svg"
-                  alt="Nvidia Logo"
-                  height="20"
-                  width="auto"
-                />
-              </div>
+              <div>
+                <div>
+                  <Image
+                    className="mx-auto h-5 w-fit dark:invert"
+                    src="https://html.tailus.io/blocks/customers/nvidia.svg"
+                    alt="Nvidia Logo"
+                    width={80}
+                    height={20}
+                  />
+                </div>
 
-              <div className="flex">
-                <img
-                  className="mx-auto h-4 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/column.svg"
-                  alt="Column Logo"
-                  height="16"
-                  width="auto"
-                />
-              </div>
-              <div className="flex">
-                <img
-                  className="mx-auto h-4 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/github.svg"
-                  alt="GitHub Logo"
-                  height="16"
-                  width="auto"
-                />
-              </div>
-              <div className="flex">
-                <img
-                  className="mx-auto h-5 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/nike.svg"
-                  alt="Nike Logo"
-                  height="20"
-                  width="auto"
-                />
-              </div>
-              <div className="flex">
-                <img
-                  className="mx-auto h-5 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
-                  alt="Lemon Squeezy Logo"
-                  height="20"
-                  width="auto"
-                />
-              </div>
-              <div className="flex">
-                <img
-                  className="mx-auto h-4 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/laravel.svg"
-                  alt="Laravel Logo"
-                  height="16"
-                  width="auto"
-                />
-              </div>
-              <div className="flex">
-                <img
-                  className="mx-auto h-7 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/lilly.svg"
-                  alt="Lilly Logo"
-                  height="28"
-                  width="auto"
-                />
-              </div>
+                <div className="flex">
+                  <Image
+                    className="mx-auto h-4 w-fit dark:invert"
+                    src="https://html.tailus.io/blocks/customers/column.svg"
+                    alt="Column Logo"
+                    width={80}
+                    height={16}
+                  />
+                </div>
 
-              <div className="flex">
-                <img
-                  className="mx-auto h-6 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/openai.svg"
-                  alt="OpenAI Logo"
-                  height="24"
-                  width="auto"
-                />
+                <div className="flex">
+                  <Image
+                    className="mx-auto h-4 w-fit dark:invert"
+                    src="https://html.tailus.io/blocks/customers/github.svg"
+                    alt="GitHub Logo"
+                    width={80}
+                    height={16}
+                  />
+                </div>
+
+                <div className="flex">
+                  <Image
+                    className="mx-auto h-5 w-fit dark:invert"
+                    src="https://html.tailus.io/blocks/customers/nike.svg"
+                    alt="Nike Logo"
+                    width={80}
+                    height={20}
+                  />
+                </div>
+
+                <div className="flex">
+                  <Image
+                    className="mx-auto h-5 w-fit dark:invert"
+                    src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
+                    alt="Lemon Squeezy Logo"
+                    width={80}
+                    height={20}
+                  />
+                </div>
+
+                <div className="flex">
+                  <Image
+                    className="mx-auto h-4 w-fit dark:invert"
+                    src="https://html.tailus.io/blocks/customers/laravel.svg"
+                    alt="Laravel Logo"
+                    width={80}
+                    height={16}
+                  />
+                </div>
+
+                <div className="flex">
+                  <Image
+                    className="mx-auto h-7 w-fit dark:invert"
+                    src="https://html.tailus.io/blocks/customers/lilly.svg"
+                    alt="Lilly Logo"
+                    width={80}
+                    height={28}
+                  />
+                </div>
+
+                <div className="flex">
+                  <Image
+                    className="mx-auto h-6 w-fit dark:invert"
+                    src="https://html.tailus.io/blocks/customers/openai.svg"
+                    alt="OpenAI Logo"
+                    width={80}
+                    height={24}
+                  />
+                </div>
               </div>
             </div>
           </div>

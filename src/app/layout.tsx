@@ -4,7 +4,6 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Footer } from "@/components/Footer";
 import { HeroHeader } from "@/components/hero-section-1";
-import { ClerkProvider } from "@clerk/nextjs";
 import { ClerkWithTheme } from "@/utils/ClerkWithTheme";
 
 const inter = Inter({ subsets: ["latin"] });
