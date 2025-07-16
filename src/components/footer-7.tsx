@@ -1,3 +1,4 @@
+import { Link } from "lucide-react";
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
@@ -30,7 +31,7 @@ const defaultSections = [
   {
     title: "Company",
     links: [
-      { name: "About", href: "#" },
+      { name: "About", href: "/about" },
       { name: "Team", href: "#" },
       { name: "Blog", href: "#" },
       { name: "Careers", href: "#" },
@@ -40,7 +41,7 @@ const defaultSections = [
     title: "Support",
     links: [
       { name: "FAQs", href: "#" },
-      { name: "Contact Us", href: "#" },
+      { name: "Contact Us", href: "/contact-us" },
     ],
   },
   {
@@ -55,9 +56,9 @@ const defaultSections = [
   {
     title: "Legal",
     links: [
-      { name: "Terms and Conditions", href: "#" },
-      { name: "Privacy Policy", href: "#" },
-      { name: "Advertise", href: "#" },
+      { name: "Terms and Conditions", href: "/terms-condition" },
+      { name: "Privacy Policy", href: "/privacy-policy" },
+      { name: "Advertise", href: "/advertise" },
     ],
   },
 ];

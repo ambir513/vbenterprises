@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import ScrollExpandMedia from "./scroll-expansion-hero";
+import { Badge } from "@/components/ui/badge";
 
 interface MediaAbout {
   overview: string;
@@ -61,7 +62,7 @@ const MediaContent = ({ mediaType }: { mediaType: "video" | "image" }) => {
   return (
     <div className="max-w-4xl mx-auto">
       <h2 className="text-3xl font-bold mb-6 text-black dark:text-white">
-        About This Component
+        Terrace Waterproofing <Badge>Current Project</Badge>
       </h2>
       <p className="text-lg mb-8 text-black dark:text-white">
         {currentMedia.about.overview}
@@ -199,7 +200,6 @@ const Demo = () => {
 
   return (
     <div className="min-h-screen">
-
       <ScrollExpandMedia
         mediaType={mediaType as "video" | "image"}
         mediaSrc={currentMedia.src}
