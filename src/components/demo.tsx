@@ -60,7 +60,7 @@ const MediaContent = ({ mediaType }: { mediaType: "video" | "image" }) => {
   const currentMedia = sampleMediaContent[mediaType];
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-4xl  mx-auto">
       <h2 className="text-3xl font-bold mb-6 text-black dark:text-white">
         Terrace Waterproofing <Badge>Current Project</Badge>
       </h2>
@@ -87,7 +87,7 @@ export const VideoExpansionTextBlend = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen mt-5">
       <ScrollExpandMedia
         mediaType={mediaType}
         mediaSrc={currentMedia.src}

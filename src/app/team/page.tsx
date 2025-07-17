@@ -2,10 +2,10 @@
 
 import dynamic from "next/dynamic";
 
-const PrivacyPolicy = dynamic(() => import("../../components/Privacy-policy"), {
+const TeamContent = dynamic(() => import("../../components/TeamContent"), {
   loading: () => <p className="text-center h-screen pt-20"></p>,
 });
 
 export default function HelpPageWrapper() {
-  return <PrivacyPolicy />;
+  return <TeamContent />;
 }

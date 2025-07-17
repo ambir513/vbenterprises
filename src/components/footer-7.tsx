@@ -32,9 +32,9 @@ const defaultSections = [
     title: "Company",
     links: [
       { name: "About", href: "/about" },
-      { name: "Team", href: "#" },
-      { name: "Blog", href: "#" },
-      { name: "Careers", href: "#" },
+      { name: "Team", href: "/team" },
+      { name: "Blog", href: "/blog" },
+      { name: "Careers", href: "/careers" },
     ],
   },
   {
@@ -47,10 +47,10 @@ const defaultSections = [
   {
     title: "Resources",
     links: [
-      { name: "Help", href: "#" },
-      { name: "Sales", href: "#" },
-      { name: "Advertise", href: "#" },
-      { name: "Privacy", href: "#" },
+      { name: "Help", href: "/help" },
+      { name: "Sales", href: "/sales" },
+      { name: "Advertise", href: "/advertise" },
+      { name: "Privacy", href: "/privacy-policy" },
     ],
   },
   {
