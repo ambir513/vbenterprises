@@ -14,7 +14,7 @@ export default function Home() {
       <div className="w-full h-fit">
         <FeaturesSectionWithHoverEffectsDemo />
       </div>
-      <TextureButtonDemo />
+      {/* <TextureButtonDemo /> */}
       <TestimonialsSectionDemo />
     </div>
   );

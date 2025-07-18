@@ -3,40 +3,66 @@ import { TestimonialsSection } from "./testimonials-with-marquee";
 const testimonials = [
   {
     author: {
-      name: "Emma Thompson",
-      handle: "@emmaai",
+      name: "Om Prakash",
+      handle: "Builder",
+      gender: "Male",
       avatar:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
+        "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortCurly&facialHairType=BeardMedium&clotheType=BlazerShirt&skinColor=Brown",
     },
-    text: "Using this AI platform has transformed how we handle data analysis. The speed and accuracy are unprecedented.",
-    href: "https://twitter.com/emmaai",
+    text: "VB Enterprises delivered excellent waterproofing work on time. Even after the heavy rains, there were no leakages.",
+    href: "https://twitter.com/omprakash_builder",
   },
   {
     author: {
-      name: "David Park",
-      handle: "@davidtech",
+      name: "Sunil Grimal",
+      handle: "Business Man",
+      gender: "Male",
       avatar:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+        "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairFrizzle&facialHairType=MoustacheMagnum&clotheType=Hoodie&eyeType=Wink&skinColor=Light",
     },
-    text: "The API integration is flawless. We've reduced our development time by 60% since implementing this solution.",
-    href: "https://twitter.com/davidtech",
+    text: "Their civil work team is highly skilled. The finishing and quality of materials exceeded our expectations.",
+    href: "https://twitter.com/sunilgrimal_infra",
   },
   {
     author: {
-      name: "Sofia Rodriguez",
-      handle: "@sofiaml",
+      name: "Neha Kulkarni",
+      handle: "Interior Designer",
+      gender: "Female",
       avatar:
-        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
+        "https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraight&accessoriesType=Round&hairColor=Black&clotheType=Blouse&eyeType=Default&skinColor=Brown",
     },
-    text: "Finally, an AI tool that actually understands context! The accuracy in natural language processing is impressive.",
+    text: "We hired VB Enterprises for interior renovation. The team was professional, responsive, and delivered great results.",
+    href: "https://twitter.com/neha_interiors",
+  },
+  {
+    author: {
+      name: "Ravi Deshmukh",
+      handle: "Civil Contractor",
+      gender: "Male",
+      avatar:
+        "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairDreads01&facialHairType=BeardLight&clotheType=GraphicShirt&skinColor=Tanned",
+    },
+    text: "PCC and coba work was done neatly with proper slope. They're reliable and committed to quality.",
+    href: "https://twitter.com/ravi_deshmukh",
+  },
+  {
+    author: {
+      name: "Anjali Mehta",
+      handle: "Homeowner",
+      gender: "Female",
+      avatar:
+        "https://avataaars.io/?avatarStyle=Circle&topType=LongHairCurly&accessoriesType=Prescription01&clotheType=ShirtCrewNeck&skinColor=Light",
+    },
+    text: "VB Enterprises helped us waterproof our home terrace. Zero hassle and total satisfaction!",
+    href: "https://twitter.com/anjali_homeowner",
   },
 ];
 
 export function TestimonialsSectionDemo() {
   return (
     <TestimonialsSection
-      title="Trusted by developers worldwide"
-      description="Join thousands of developers who are already building the future with our AI platform"
+      title="Trusted by Clients Across Major Cities"
+      description="Join countless homeowners, contractors, and businesses who trust VB Enterprises for dependable waterproofing, civil works, and complete interior solutions."
       testimonials={testimonials}
     />
   );

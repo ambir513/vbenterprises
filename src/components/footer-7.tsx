@@ -40,7 +40,7 @@ const defaultSections = [
   {
     title: "Support",
     links: [
-      { name: "FAQs", href: "#" },
+      { name: "FAQs", href: "/faq" },
       { name: "Contact Us", href: "/contact-us" },
     ],
   },

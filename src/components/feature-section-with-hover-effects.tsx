@@ -1,63 +1,67 @@
 import { cn } from "@/lib/utils";
 import {
-  IconAdjustmentsBolt,
-  IconCloud,
-  IconCurrencyDollar,
-  IconEaseInOut,
-  IconHeart,
-  IconHelp,
-  IconRouteAltLeft,
-  IconTerminal2,
-} from "@tabler/icons-react";
+  Droplet,
+  Users,
+  Layers,
+  Clock,
+  IndianRupee,
+  MapPin,
+  Hammer,
+  Wrench,
+} from "lucide-react";
 
 export function FeaturesSectionWithHoverEffects() {
   const features = [
     {
-      title: "Built for developers",
+      title: "Expert Waterproofing Solutions",
       description:
-        "Built for engineers, developers, dreamers, thinkers and doers.",
-      icon: <IconTerminal2 />,
+        "We specialize in terrace, wall, and internal waterproofing using industry-standard materials and proven techniques.",
+      icon: <Droplet />,
     },
     {
-      title: "Ease of use",
+      title: "Skilled Workforce",
       description:
-        "It's as easy as using an Apple, and as expensive as buying one.",
-      icon: <IconEaseInOut />,
+        "Our trained team ensures high-quality workmanship across all construction and repair projects.",
+      icon: <Users />,
     },
     {
-      title: "Pricing like no other",
+      title: "PCC & Coba Application",
       description:
-        "Our prices are best in the market. No cap, no lock, no credit card required.",
-      icon: <IconCurrencyDollar />,
+        "We execute PCC base layers and traditional coba waterproofing for long-term terrace durability.",
+      icon: <Layers />,
     },
     {
-      title: "100% Uptime guarantee",
-      description: "We just cannot be taken down by anyone.",
-      icon: <IconCloud />,
-    },
-    {
-      title: "Multi-tenant Architecture",
-      description: "You can simply share passwords instead of buying new seats",
-      icon: <IconRouteAltLeft />,
-    },
-    {
-      title: "24/7 Customer Support",
+      title: "On-Time Project Delivery",
       description:
-        "We are available a 100% of the time. Atleast our AI Agents are.",
-      icon: <IconHelp />,
+        "We take deadlines seriously and strive to complete every project on schedule without compromising quality.",
+      icon: <Clock />,
     },
     {
-      title: "Money back guarantee",
+      title: "Affordable Pricing",
       description:
-        "If you donot like EveryAI, we will convince you to like us.",
-      icon: <IconAdjustmentsBolt />,
+        "High-quality service at reasonable rates, with transparent quotes and no hidden charges.",
+      icon: <IndianRupee />,
     },
     {
-      title: "And everything else",
-      description: "I just ran out of copy ideas. Accept my sincere apologies",
-      icon: <IconHeart />,
+      title: "Serving Bidar & Nearby Areas",
+      description:
+        "We proudly serve homes, buildings, and commercial spaces across Bidar and surrounding regions.",
+      icon: <MapPin />,
+    },
+    {
+      title: "End-to-End Project Management",
+      description:
+        "From planning to execution, we handle everything so you can relax while we build.",
+      icon: <Hammer />,
+    },
+    {
+      title: "Total Interior & Civil Works",
+      description:
+        "We provide complete solutions for interior design, renovation, and structural civil works tailored to your needs.",
+      icon: <Wrench />,
     },
   ];
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-10 max-w-7xl mx-auto">
       {features.map((feature, index) => (

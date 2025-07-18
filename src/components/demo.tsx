@@ -35,9 +35,9 @@ const sampleMediaContent: MediaContentCollection = {
     scrollToExpand: "Scroll to Expand Demo",
     about: {
       overview:
-        "This is a demonstration of the ScrollExpandMedia component with a video. As you scroll, the video expands to fill more of the screen, creating an immersive experience. This component is perfect for showcasing video content in a modern, interactive way.",
+        "VB Enterprises is currently undertaking a comprehensive terrace waterproofing project in Bidar city. This work focuses on protecting residential and commercial structures from water damage caused by rain and seepage, ensuring long-term durability and structural integrity.",
       conclusion:
-        "The ScrollExpandMedia component provides a unique way to engage users with your content through interactive scrolling. Try switching between video and image modes to see different implementations.",
+        "As part of this project, the team is also executing PCC (Plain Cement Concrete) and Coba treatments to strengthen the terrace surface and enhance water resistance. Our skilled workforce is committed to delivering quality results using industry-standard materials and proven techniques.",
     },
   },
   image: {
@@ -49,9 +49,9 @@ const sampleMediaContent: MediaContentCollection = {
     scrollToExpand: "Scroll to Expand Demo",
     about: {
       overview:
-        "This is a demonstration of the ScrollExpandMedia component with an image. The same smooth expansion effect works beautifully with static images, allowing you to create engaging visual experiences without video content.",
+        "VB Enterprises is currently undertaking a comprehensive terrace waterproofing project in Bidar city. This work focuses on protecting residential and commercial structures from water damage caused by rain and seepage, ensuring long-term durability and structural integrity.",
       conclusion:
-        "The ScrollExpandMedia component works equally well with images and videos. This flexibility allows you to choose the media type that best suits your content while maintaining the same engaging user experience.",
+        "As part of this project, the team is also executing PCC (Plain Cement Concrete) and Coba treatments to strengthen the terrace surface and enhance water resistance. Our skilled workforce is committed to delivering quality results using industry-standard materials and proven techniques.",
     },
   },
 };

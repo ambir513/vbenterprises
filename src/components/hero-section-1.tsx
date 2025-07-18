@@ -98,15 +98,16 @@ export function HeroSection() {
                 <AnimatedGroup variants={transitionVariants}>
                   <Link
                     href="#link"
-                    className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-black/5 transition-all duration-300 dark:border-t-white/5 dark:shadow-zinc-950"
+                    className="hover:bg-background active:bg-background dark:active:border-t-border dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-black/5 transition-all duration-300 dark:border-t-white/5 dark:shadow-zinc-950        
+        active:scale-[0.96] "
                   >
                     <span className="text-foreground text-sm">
                       25+ Years of Trusted Work
                     </span>
                     <span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
 
-                    <div className="bg-background group-hover:bg-muted size-6 overflow-hidden rounded-full duration-500">
-                      <div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
+                    <div className="bg-background group-hover:bg-muted  group-acttive:bg-muted size-6 overflow-hidden rounded-full duration-500">
+                      <div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0 group-active:translate-x-0">
                         <span className="flex size-6">
                           <ArrowRight className="m-auto size-3" />
                         </span>
@@ -220,9 +221,9 @@ export function HeroSection() {
 
 const menuItems = [
   { name: "Features", href: "#link" },
-  { name: "Solution", href: "#link" },
-  { name: "Pricing", href: "#link" },
-  { name: "About", href: "#link" },
+  { name: "Projects", href: "#link" },
+  { name: "Quotation", href: "#link" },
+  { name: "About", href: "/about" },
 ];
 
 export const HeroHeader = () => {
@@ -314,6 +315,12 @@ export const HeroHeader = () => {
                       <Link
                         href={item.href}
                         className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                        onClick={() => {
+                          setMenuState((prev) => !prev);
+                          setTimeout(() => {
+                            window.scroll(0, 0);
+                          }, 500);
+                        }}
                       >
                         <span>{item.name}</span>
                       </Link>
