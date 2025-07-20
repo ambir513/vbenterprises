@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
       "picsum.photos",
       "res-console.cloudinary.com",
       "res.cloudinary.com",
+      "i.pinimg.com",
     ],
   },
   eslint: {

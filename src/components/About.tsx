@@ -1,5 +1,7 @@
 import { AnimatedGroup } from "@/components/ui/animated-group";
 import type { Variants } from "framer-motion";
+import Image from "next/image";
+import { ImageGeneration } from "./ui/ai-chat-image-generation-1";
 
 export default function About() {
   const transitionVariants: {
@@ -37,27 +39,44 @@ export default function About() {
                   Last updated: July 16, 2025
                 </p>
               </div>
-
               <div className="space-y-6 mt-4">
-                <p>
-                  <strong>VB Enterprises</strong> is a professional portfolio
-                  that showcases the decades-long craftsmanship and commitment
-                  of <strong>Vishwanath Biradar</strong> — a highly skilled
-                  civil and interior contractor with over{" "}
-                  <strong>25 years of experience</strong> in delivering
-                  full-scale construction and renovation projects across India’s
-                  major cities.
-                </p>
-
-                <div className="text-xl font-semibold mt-8 mb-2">
-                  Our Mission
+                <div className="flex md:flex-row flex-col justify-center items-center gap-3">
+                  <div className="pr-2 sm:mr-0 mr-5">
+                    <ImageGeneration>
+                      <div className="md:w-[300px] sm:w-full w-[330px] h-[200px] select-none overflow-hidden rounded-lg shadow-md">
+                        <Image
+                          src="https://i.pinimg.com/736x/c0/b0/af/c0b0af6922628f9c47edf29113a8e287.jpg"
+                          alt="Vishwanath Biradar"
+                          width={500}
+                          height={300}
+                          className="object-cover scale-135 pl-3 select-none pb-[400px] transition-transform duration-300"
+                        />
+                      </div>
+                    </ImageGeneration>
+                  </div>
+                  <div className="flex flex-col sm:gap-1 gap-4 items-center ">
+                    <p>
+                      <strong>VB Enterprises</strong> is a professional
+                      portfolio that showcases the decades-long craftsmanship
+                      and commitment of <strong>Vishwanath Biradar</strong> — a
+                      highly skilled civil and interior contractor with over{" "}
+                      <strong>25 years of experience</strong> in delivering
+                      full-scale construction and renovation projects across
+                      India’s major cities.
+                    </p>
+                    <div className="">
+                      <div className="text-xl font-semibold mt-2 mb-2">
+                        Our Mission
+                      </div>
+                      <p>
+                        To deliver quality-driven, functional, and aesthetically
+                        appealing interior and civil construction solutions
+                        while maintaining transparency, durability, and trust
+                        with every client.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <p>
-                  To deliver quality-driven, functional, and aesthetically
-                  appealing interior and civil construction solutions while
-                  maintaining transparency, durability, and trust with every
-                  client.
-                </p>
 
                 <div className="text-xl font-semibold mt-8 mb-2">
                   What We Do
@@ -126,35 +145,27 @@ export default function About() {
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
-                      fill="currentColor"
-                      className="icon icon-tabler icons-tabler-filled icon-tabler-phone"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M9 3a1 1 0 0 1 .877 .519l.051 .11l2 5a1 1 0 0 1 -.313 1.16l-.1 .068l-1.674 1.004l.063 .103a10 10 0 0 0 3.132 3.132l.102 .062l1.005 -1.672a1 1 0 0 1 1.113 -.453l.115 .039l5 2a1 1 0 0 1 .622 .807l.007 .121v4c0 1.657 -1.343 3 -3.06 2.998c-8.579 -.521 -15.418 -7.36 -15.94 -15.998a3 3 0 0 1 2.824 -2.995l.176 -.005h4z" />
-                    </svg>
-                    <p>Phone: +91-9833784528</p>
-                  </li>
-
-                  <li className="flex items-center gap-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="icon icon-tabler icons-tabler-outline icon-tabler-map-pin"
+                      className="icon icon-tabler icon-tabler-mail"
                     >
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
-                      <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+                      <path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2H3a2 2 0 0 1 -2 -2V7a2 2 0 0 1 2 -2z" />
+                      <path d="M3 7l9 6l9 -6" />
                     </svg>
-                    <p>Location: Mumbai, India</p>
+                    <p>
+                      Email 1:{" "}
+                      <a
+                        href="mailto:quotation@vbenterprises.work"
+                        className="text-blue-600 dark:text-blue-400 underline"
+                      >
+                        quotation@vbenterprises.work
+                      </a>
+                    </p>
                   </li>
-
                   <li className="flex items-center gap-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -173,7 +184,7 @@ export default function About() {
                       <path d="M3 7l9 6l9 -6" />
                     </svg>
                     <p>
-                      Email:{" "}
+                      Email 2:{" "}
                       <a
                         href="mailto:contact@vbenterprises.work"
                         className="text-blue-600 dark:text-blue-400 underline"
@@ -181,6 +192,47 @@ export default function About() {
                         contact@vbenterprises.work
                       </a>
                     </p>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="icon icon-tabler icons-tabler-filled icon-tabler-phone"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M9 3a1 1 0 0 1 .877 .519l.051 .11l2 5a1 1 0 0 1 -.313 1.16l-.1 .068l-1.674 1.004l.063 .103a10 10 0 0 0 3.132 3.132l.102 .062l1.005 -1.672a1 1 0 0 1 1.113 -.453l.115 .039l5 2a1 1 0 0 1 .622 .807l.007 .121v4c0 1.657 -1.343 3 -3.06 2.998c-8.579 -.521 -15.418 -7.36 -15.94 -15.998a3 3 0 0 1 2.824 -2.995l.176 -.005h4z" />
+                    </svg>
+                    <p>
+                      Phone:{" "}
+                      <a
+                        href="tel:+919833784528"
+                        className="underline text-blue-600 dark:text-blue-400"
+                      >
+                        +91-9833784528
+                      </a>
+                    </p>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="icon icon-tabler icon-tabler-map-pin"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                      <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+                    </svg>
+                    <p>Location: Mumbai, India</p>
                   </li>
                 </ul>
               </div>
