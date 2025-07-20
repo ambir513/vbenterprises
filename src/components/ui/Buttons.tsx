@@ -1,7 +1,4 @@
 "use client";
-
-import { ChevronLeft, Trash, X } from "lucide-react";
-
 import { TextureButton } from "@/components/ui/texture-button";
 import { LoaderCircleIcon } from "lucide-react";
 import { useState } from "react";

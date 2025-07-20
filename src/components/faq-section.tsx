@@ -209,7 +209,7 @@ export const Component = () => {
 
   return (
     <AnimatedGroup variants={transitionVariants}>
-      <div className="container mx-auto px-4 py-18  w-[864px]">
+      <div className="container mx-auto px-4 py-18  sm:w-[864px]">
         <header className="text-center mb-12">
           <p className="text-sm font-medium text-primary mb-2">FAQs</p>
           <h1 className="text-4xl font-bold tracking-tight mb-4">

@@ -221,8 +221,8 @@ export function HeroSection() {
 
 const menuItems = [
   { name: "Features", href: "/feature" },
-  { name: "Projects", href: "#link" },
-  { name: "Quotation", href: "#link" },
+  { name: "Projects", href: "/projects" },
+  { name: "Quotation", href: "/quotation" },
   { name: "About", href: "/about" },
 ];
 

@@ -20,7 +20,7 @@ const itemsSample: BentoItem[] = [
     description:
       "Full turnkey projects for flats, offices, and commercial units including carpentry, ceiling, and finishes.",
     icon: <Paintbrush className="w-4 h-4 text-indigo-500" />,
-    status: "Live",
+
     tags: ["Interior", "Ceiling", "Finishing"],
     colSpan: 2,
     hasPersistentHover: true,
@@ -123,7 +123,7 @@ export default function Feature() {
   return (
     <div className="py-28 px-4 md:px-8 bg-white dark:bg-black text-gray-800 dark:text-gray-100">
       <AnimatedGroup variants={transitionVariants}>
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto select-none ">
           <div className="mb-10 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
               Our Core Features
