@@ -51,7 +51,7 @@ export function ImageSwiper({ images, className, ...props }: ImageSwiperProps) {
             <Button
               variant="ghost"
               size="icon"
-              className="pointer-events-auto h-8 w-8 rounded-full bg-white/80 opacity-0 transition-opacity group-hover:opacity-100"
+              className="pointer-events-auto h-8 w-8 rounded-full bg-white/80 opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100"
               onClick={() => setImgIndex((prev) => prev + 1)}
             >
               <ChevronRight className="h-4 w-4 text-neutral-600" />
@@ -60,7 +60,7 @@ export function ImageSwiper({ images, className, ...props }: ImageSwiperProps) {
         )}
 
         <div className="absolute bottom-2 w-full flex justify-center">
-          <div className="flex min-w-9 items-center justify-center rounded-md bg-black/80 px-2 py-0.5 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">
+          <div className="flex min-w-9 items-center justify-center rounded-md bg-black/80 px-2 py-0.5 text-xs text-white   transition-opacity opacity-100">
             {imgIndex + 1}/{images.length}
           </div>
         </div>

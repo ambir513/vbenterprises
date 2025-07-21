@@ -55,7 +55,7 @@ function Perview({ links }: { links: string }) {
             setIsDisabled((prev) => !prev);
             setTimeout(() => {
               setIsDisabled((prev) => !prev);
-            }, 700);
+            }, 500);
           }}
           className="font-semibold flex justify-center items-center w-full"
         >

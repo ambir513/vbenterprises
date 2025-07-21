@@ -97,7 +97,7 @@ export function HeroSection() {
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                 <AnimatedGroup variants={transitionVariants}>
                   <Link
-                    href="#link"
+                    href="/feature"
                     className="hover:bg-background active:bg-background dark:active:border-t-border dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-black/5 transition-all duration-300 dark:border-t-white/5 dark:shadow-zinc-950        
         active:scale-[0.96] "
                   >
@@ -153,7 +153,7 @@ export function HeroSection() {
                       size="lg"
                       className="rounded-xl px-5 text-base"
                     >
-                      <Link href="#link">
+                      <Link href="/quotation">
                         <span className="text-nowrap">Explore Services</span>
                       </Link>
                     </Button>
@@ -165,7 +165,7 @@ export function HeroSection() {
                     variant="ghost"
                     className="h-10.5 rounded-xl px-5"
                   >
-                    <Link href="#link">
+                    <Link href="/projects">
                       <span className="text-nowrap">View Projects</span>
                     </Link>
                   </Button>

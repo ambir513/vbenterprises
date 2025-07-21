@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 function DotPatternDemo() {
   return (
-    <div className="relative flex md:h-[500px] h-[600px] w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
+    <div className="relative flex md:h-[500px] h-[600px] w-full flex-col items-center justify-center overflow-hidden rounded-lg ">
       <div className="z-10 flex flex-col justify-center items-center gap-2 px-2">
         <p className=" whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white">
           Quotation – Labour & Material Rates

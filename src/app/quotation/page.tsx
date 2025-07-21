@@ -1,15 +1,11 @@
-import { DotPatternDemo } from "@/components/Dot";
-import { RealEstateCard } from "@/components/ImageCart";
+"use client";
 
-export default function Page() {
-  return (
-    <div className="flex flex-col  items-center h-fit w-full">
-      <DotPatternDemo />
-      <div className="flex justify-center items-center gap-3 flex-wrap mb-10">
-      <RealEstateCard />
-      <RealEstateCard />
-      <RealEstateCard />
-      </div>
-    </div>
-  );
+import dynamic from "next/dynamic";
+
+const Quotation = dynamic(() => import("../../components/Quotation"), {
+  loading: () => <p className="text-center h-screen pt-20"></p>,
+});
+
+export default function HelpPageWrapper() {
+  return <Quotation />;
 }

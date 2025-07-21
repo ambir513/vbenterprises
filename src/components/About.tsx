@@ -2,6 +2,7 @@ import { AnimatedGroup } from "@/components/ui/animated-group";
 import type { Variants } from "framer-motion";
 import Image from "next/image";
 import { ImageGeneration } from "./ui/ai-chat-image-generation-1";
+import SpotifyAlbumEmbed from "./SpotifyAlbumEmbed";
 
 export default function About() {
   const transitionVariants: {
@@ -32,12 +33,19 @@ export default function About() {
           <div className="container px-4 md:px-6">
             <div className="prose prose-gray max-w-none dark:prose-invert">
               <div className="pb-4 space-y-2 border-b border-gray-200 dark:border-gray-800">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                  About VB Enterprises
-                </h1>
-                <p className="text-gray-500 dark:text-gray-400">
-                  Last updated: July 16, 2025
-                </p>
+                <div className="flex md:flex-row flex-col justify-between gap-4">
+                  <div className="flex flex-col gap-1">
+                    <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                      About VB Enterprises
+                    </h1>
+                    <p className="text-gray-500 dark:text-gray-400">
+                      Last updated: July 16, 2025
+                    </p>
+                  </div>
+                  <div className="">
+                    <SpotifyAlbumEmbed />
+                  </div>
+                </div>
               </div>
               <div className="space-y-6 mt-4">
                 <div className="flex md:flex-row flex-col justify-center items-center gap-3">

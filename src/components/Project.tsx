@@ -54,15 +54,20 @@ export default function Project() {
                   <h2 className="text-2xl font-semibold">{item.title}</h2>
 
                   <div className="prose prose-sm dark:prose-invert">
-                    {item.image && (
-                      <Image
-                        src={item.image}
-                        alt="Blog Image"
-                        width={1000}
-                        height={600}
-                        className="rounded-xl mb-6 object-cover w-full"
-                      />
-                    )}
+                    {item.image &&
+                      item.image?.map((image: string, index) => {
+                        return (
+                          <div className="flex flex-col gap-3" key={index}>
+                            <Image
+                              src={image}
+                              alt="Blog Image"
+                              width={1000}
+                              height={600}
+                              className="rounded-xl mb-6 object-cover w-full"
+                            />
+                          </div>
+                        );
+                      })}
                     {item.description}
                   </div>
                 </div>
@@ -93,8 +98,12 @@ const dummyContent = [
       </>
     ),
     badge: "Bidar Project",
-    image:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=3540",
+    image: [
+      "https://res.cloudinary.com/dvvxpzajh/image/upload/v1752416367/WhatsApp_Image_2025-07-12_at_12.59.43_PM_gvh7de.jpg",
+      "https://res.cloudinary.com/dvvxpzajh/image/upload/v1753101692/IMG_20250721_180427_ay7qo0.jpg",
+      "https://res.cloudinary.com/dvvxpzajh/image/upload/v1752416735/WhatsApp_Image_2025-07-12_at_1.00.50_PM_guqkyp.jpg",
+      "https://res.cloudinary.com/dvvxpzajh/image/upload/v1753101693/IMG_20250721_180623_punevd.jpg",
+    ],
   },
   {
     title: "Interior Work - Modular Kitchen",
@@ -107,8 +116,11 @@ const dummyContent = [
       </>
     ),
     badge: "Interior",
-    image:
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=3540",
+    image: [
+      "https://res.cloudinary.com/dvvxpzajh/image/upload/v1752416367/WhatsApp_Image_2025-07-12_at_1.00.26_PM_lq0fyo.jpg",
+      "https://res.cloudinary.com/dvvxpzajh/image/upload/v1753101691/IMG_20250721_180233_py5inw.jpg",
+      "https://res.cloudinary.com/dvvxpzajh/image/upload/v1753101689/IMG_20250721_180250_djrzfh.jpg"
+    ],
   },
   {
     title: "Civil Renovation - Bathroom + Tiles",
@@ -121,7 +133,10 @@ const dummyContent = [
       </>
     ),
     badge: "Civil",
-    image:
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=3506",
+    image: [
+      "https://res.cloudinary.com/dvvxpzajh/image/upload/v1752416737/WhatsApp_Image_2025-07-12_at_1.00.44_PM_1_ev1nhd.jpg",
+      "https://res.cloudinary.com/dvvxpzajh/image/upload/v1752416737/WhatsApp_Image_2025-07-12_at_1.00.44_PM_plld2e.jpg",
+      "https://res.cloudinary.com/dvvxpzajh/image/upload/v1752416736/WhatsApp_Image_2025-07-12_at_1.00.45_PM_yws1yu.jpg",
+    ],
   },
 ];
