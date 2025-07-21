@@ -1,21 +1,25 @@
-// lib/mongodb.ts
-import mongoose from "mongoose";
+import mongoose, { Connection } from "mongoose";
 
 const MONGODB_URI = process.env.NEXT_PUBLIC_CONNECT_STRING as string;
-
+console.log("✅ Connected to MongoDB:", process.env.NEXT_PUBLIC_CONNECT_STRING);
 if (!MONGODB_URI) {
   throw new Error(
-    "Please define the MONGODB_URI environment variable inside .env.local"
+    "Please define the MONGODB_URI environment variable in .env.local"
   );
 }
 
-let cached = (global as any).mongoose;
+interface MongooseGlobal {
+  conn: Connection | null;
+  promise: Promise<typeof mongoose> | null;
+}
+
+let cached: MongooseGlobal = (global as any).mongoose;
 
 if (!cached) {
   cached = (global as any).mongoose = { conn: null, promise: null };
 }
 
-export async function connectToDatabase() {
+export async function connectToDatabase(): Promise<Connection> {
   if (cached.conn) return cached.conn;
 
   if (!cached.promise) {
@@ -24,6 +28,7 @@ export async function connectToDatabase() {
     });
   }
 
-  cached.conn = await cached.promise;
+  const mongooseInstance = await cached.promise;
+  cached.conn = mongooseInstance.connection;
   return cached.conn;
 }

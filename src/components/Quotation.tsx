@@ -1,3 +1,4 @@
+"use client";
 import { DotPatternDemo } from "@/components/Dot";
 import { RealEstateCard } from "@/components/ImageCart";
 
@@ -30,8 +31,25 @@ const transitionVariants: {
 };
 
 export default function Quotation() {
-  const { isSignedIn, isLoaded } = useUser();
+  const { isSignedIn, isLoaded, user } = useUser();
   const router = useRouter();
+  const email = user?.emailAddresses[0]?.emailAddress;
+  console.log(user);
+  useEffect(() => {
+    sendEmail();
+  }, []);
+  async function sendEmail() {
+    try {
+      const res = await fetch("/api/sendmail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email }),
+      });
+      console.log(res.json());
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   useEffect(() => {
     if (isLoaded && !isSignedIn) {

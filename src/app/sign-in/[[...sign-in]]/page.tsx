@@ -1,5 +1,6 @@
+"use client";
 import { AnimatedGroup } from "@/components/ui/animated-group";
-import { SignIn } from "@clerk/nextjs";
+import { SignIn, useUser } from "@clerk/nextjs";
 
 const transitionVariants = {
   item: {

@@ -1,3 +1,4 @@
+"use client";
 import { SignUp } from "@clerk/nextjs";
 import { AnimatedGroup } from "@/components/ui/animated-group";
 

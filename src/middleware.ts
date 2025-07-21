@@ -18,6 +18,7 @@ const isPublicRoute = createRouteMatcher([
   "/feature",
   "/projects",
   "/quotation",
+  "/(api|trpc)(.*)",
   "/quotation.pdf",
 ]);
 

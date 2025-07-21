@@ -7,44 +7,7 @@ import { LoaderCircleIcon } from "lucide-react";
 import { Label } from "./ui/label";
 import { TextureButton } from "./ui/texture-button";
 import { useState } from "react";
-
-const formSchema = z.object({
-  firstName: z
-    .string()
-    .min(2, {
-      message: "First name must be at least 2 characters.",
-    })
-    .max(50, {
-      message: "First name must not exceed 50 characters.",
-    }),
-  lastName: z
-    .string()
-    .min(2, {
-      message: "Last name must be at least 2 characters.",
-    })
-    .max(50, {
-      message: "Last name must not exceed 50 characters.",
-    }),
-  email: z.string().email({
-    message: "Please enter a valid email address.",
-  }),
-  subject: z
-    .string()
-    .min(5, {
-      message: "Subject must be at least 5 characters.",
-    })
-    .max(100, {
-      message: "Subject must not exceed 100 characters.",
-    }),
-  message: z
-    .string()
-    .min(10, {
-      message: "Message must be at least 10 characters.",
-    })
-    .max(1000, {
-      message: "Message must not exceed 1000 characters.",
-    }),
-});
+import ContactForm from "./ContactForm";
 
 export default function Contact() {
   const [isDisabled, setIsDisabled] = useState(false);
@@ -127,58 +90,8 @@ export default function Contact() {
                     </ul>
 
                     <div className="flex lg:flex-row flex-col  gap-3">
-                      <div className="mx-auto flex max-w-screen-md flex-col gap-6 rounded-lg my-3 border p-10">
-                        <div className="flex gap-4">
-                          <div className="grid w-full items-center gap-1.5">
-                            <Label htmlFor="firstname">First Name</Label>
-                            <Input
-                              type="text"
-                              id="firstname"
-                              placeholder="John"
-                            />
-                          </div>
-                          <div className="grid w-full items-center gap-1.5">
-                            <Label htmlFor="lastname">Last Name</Label>
-                            <Input
-                              type="text"
-                              id="lastname"
-                              placeholder="Doe"
-                            />
-                          </div>
-                        </div>
-                        <div className="grid w-full items-center gap-1.5">
-                          <Label htmlFor="email">Email</Label>
-                          <Input
-                            type="email"
-                            id="email"
-                            placeholder="john@example.com"
-                          />
-                        </div>
-                        <div className="grid w-full items-center gap-1.5">
-                          <Label htmlFor="subject">Subject</Label>
-                          <Input
-                            type="text"
-                            id="subject"
-                            placeholder="How can we help you?"
-                          />
-                        </div>
-                        <div className="grid w-full gap-1.5">
-                          <Label htmlFor="message">Message</Label>
-                          <Textarea
-                            placeholder="Tell us more about your inquiry"
-                            id="message"
-                          />
-                        </div>
-                        <TextureButton
-                          size="sm"
-                          onClick={() => setIsDisabled((prev) => !prev)}
-                          className="font-semibold cursor-pointer"
-                        >
-                          {isDisabled ? (
-                            <LoaderCircleIcon className="animate-spin size-4" />
-                          ) : null}
-                          {isDisabled ? "Send Message..." : "Send Message"}
-                        </TextureButton>
+                      <div className="flex gap-4">
+                        <ContactForm />
                       </div>
                       <div className="pl-4">
                         <div className="">

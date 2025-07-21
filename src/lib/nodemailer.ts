@@ -2,14 +2,15 @@
 import nodemailer from "nodemailer";
 
 export const transporter = nodemailer.createTransport({
-  host: process.env.EMAIL_HOST,
-  port: Number(process.env.EMAIL_PORT),
-  secure: process.env.EMAIL_SECURE === "true",
+  host: "mail.privateemail.com",
+  port: 465,
+  secure: true,
   auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
+    user: process.env.NEXT_PUBLIC_EMAIL_USER,
+    pass: process.env.NEXT_PUBLIC_EMAIL_PASS,
   },
 });
+
 export async function sendMail({
   to,
   subject,
@@ -19,7 +20,7 @@ export async function sendMail({
   subject: string;
   html: string;
 }) {
-  const from = `"${process.env.EMAIL_FROM_NAME}" <${process.env.EMAIL_FROM}>`;
+  const from = `"VB Enterprises" <${process.env.NEXT_PUBLIC_EMAIL_USER}>`;
 
   return transporter.sendMail({
     from,
