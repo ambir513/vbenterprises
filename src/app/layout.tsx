@@ -15,6 +15,16 @@ export const metadata: Metadata = {
   icons: {
     icon: "./favicon.png",
   },
+  openGraph: {
+    title: "VB Enterprises",
+    description:
+      "VB Enterprises is a trusted interior civil contracting firm offering top-quality residential and commercial renovation, construction, and design services across India.",
+    type: "website",
+    url: "https://vbenterprises.work/",
+    images: [
+      "https://res.cloudinary.com/dvvxpzajh/image/upload/v1753111698/vblogo_kouzcd.png",
+    ],
+  },
 };
 
 export default function RootLayout({
