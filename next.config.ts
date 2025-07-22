@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
       "picsum.photos",
       "res-console.cloudinary.com",
       "res.cloudinary.com",
+      "scontent.fpnq7-2.fna.fbcdn.net",
       "i.pinimg.com",
     ],
   },

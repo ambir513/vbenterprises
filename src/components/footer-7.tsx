@@ -1,6 +1,6 @@
 import { Link } from "lucide-react";
 import React from "react";
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaFacebook, FaWhatsapp } from "react-icons/fa";
 
 interface Footer7Props {
   logo?: {
@@ -64,10 +64,16 @@ const defaultSections = [
 ];
 
 const defaultSocialLinks = [
-  { icon: <FaInstagram className="size-5" />, href: "#", label: "Instagram" },
-  { icon: <FaFacebook className="size-5" />, href: "#", label: "Facebook" },
-  { icon: <FaTwitter className="size-5" />, href: "#", label: "Twitter" },
-  { icon: <FaLinkedin className="size-5" />, href: "#", label: "LinkedIn" },
+  {
+    icon: <FaWhatsapp className="size-5" />,
+    href: "https://wa.me/+919833784582",
+    label: "Whatsapp",
+  },
+  {
+    icon: <FaFacebook className="size-5" />,
+    href: "https://www.facebook.com/vishwanathc.biradar",
+    label: "Facebook",
+  },
 ];
 
 const Logo = ({ className }: { className?: string }) => {
@@ -119,7 +125,7 @@ export const Footer7 = ({
     title: "Shadcnblocks.com",
   },
   sections = defaultSections,
-  description = "A collection of components for your startup business or side project.",
+  description = "VB Enterprises delivers trusted interior renovation and construction services across India.",
   socialLinks = defaultSocialLinks,
   copyright = "© 2025 vbenterprises.work. All rights reserved.",
   Crafted = "Crafted by Amar Biradar",
@@ -133,7 +139,7 @@ export const Footer7 = ({
             <div className="flex items-center gap-2 lg:justify-start">
               <Logo />
             </div>
-            <p className="max-w-[70%] text-sm text-muted-foreground">
+            <p className="sm:w-[70%] w-full text-sm text-muted-foreground">
               {description}
             </p>
             <ul className="flex items-center space-x-6 text-muted-foreground">

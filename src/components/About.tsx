@@ -31,7 +31,7 @@ export default function About() {
       <div className="py-6 md:py-12 lg:py-16 flex justify-center items-center md:w-[1100px]">
         <AnimatedGroup variants={transitionVariants}>
           <div className="container px-4 md:px-6">
-            <div className="prose prose-gray max-w-none dark:prose-invert">
+            <div className="prose prose-gray w-fit dark:prose-invert">
               <div className="pb-4 space-y-2 border-b border-gray-200 dark:border-gray-800">
                 <div className="flex md:flex-row flex-col justify-between gap-4">
                   <div className="flex flex-col gap-1">
@@ -49,21 +49,21 @@ export default function About() {
               </div>
               <div className="space-y-6 mt-4">
                 <div className="flex md:flex-row flex-col justify-center items-center gap-3">
-                  <div className="pr-2 sm:mr-0 mr-5">
+                  <div className="pr-0 sm:mr-0 mr-6">
                     <ImageGeneration>
-                      <div className="md:w-[300px] sm:w-full w-[330px] h-[200px] select-none overflow-hidden rounded-lg shadow-md">
+                      <div className="md:w-[290px] select-none sm:w-full w-[300px] h-[300px] select-none overflow-hidden rounded-lg shadow-md">
                         <Image
-                          src="https://i.pinimg.com/736x/c0/b0/af/c0b0af6922628f9c47edf29113a8e287.jpg"
+                          src="https://scontent.fpnq7-2.fna.fbcdn.net/v/t1.6435-9/179636635_109476344621492_1261522891062766266_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=XehtiA2oH-oQ7kNvwHQiiir&_nc_oc=Adn3dEEdv9p0CVIs3hZywj4LJJZZUCrH--TRtzwtpA67hT97c5iLBQkLIrENJ8rLTcE&_nc_zt=23&_nc_ht=scontent.fpnq7-2.fna&_nc_gid=yLJ7DtP4cj2gWT5AEh4fnw&oh=00_AfQ5zMeldehbfO4MT7O5ZU_4tXyrbr54zM_uulfc8RqHqg&oe=68A6D5FE"
                           alt="Vishwanath Biradar"
                           width={500}
                           height={300}
-                          className="object-cover scale-135 pl-3 select-none pb-[400px] transition-transform duration-300"
+                          className="object-cover scale-102   select-none pb-[16000px] transition-transform duration-300"
                         />
                       </div>
                     </ImageGeneration>
                   </div>
                   <div className="flex flex-col sm:gap-1 gap-4 items-center ">
-                    <p>
+                    <p className="mt-2">
                       <strong>VB Enterprises</strong> is a professional
                       portfolio that showcases the decades-long craftsmanship
                       and commitment of <strong>Vishwanath Biradar</strong> — a
@@ -83,17 +83,19 @@ export default function About() {
                         with every client.
                       </p>
                     </div>
+                    <div className="">
+                      <div className="text-xl font-semibold mt-4 mb-2">
+                        What We Do
+                      </div>
+                      <p>
+                        We offer complete end-to-end interior contracting
+                        services, backed by technical skill and decades of
+                        hands-on project management. Our work includes:
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="text-xl font-semibold mt-8 mb-2">
-                  What We Do
-                </div>
-                <p>
-                  We offer complete end-to-end interior contracting services,
-                  backed by technical skill and decades of hands-on project
-                  management. Our work includes:
-                </p>
                 <ul>
                   <li>Full interior design and execution</li>
                   <li>False ceiling, modular kitchens, tiling & painting</li>
