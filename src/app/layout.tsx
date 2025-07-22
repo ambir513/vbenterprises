@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://vbenterprises.work/",
     images: [
-      "https://res.cloudinary.com/dvvxpzajh/image/upload/v1753111698/vblogo_kouzcd.png",
+      "https://photos.app.goo.gl/fPyAy83vMz994swM7",
     ],
   },
 };
