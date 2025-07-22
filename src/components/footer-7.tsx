@@ -66,7 +66,7 @@ const defaultSections = [
 const defaultSocialLinks = [
   {
     icon: <FaWhatsapp className="size-5" />,
-    href: "https://wa.me/+919833784582",
+    href: "https://wa.me/+919833784528",
     label: "Whatsapp",
   },
   {
