@@ -148,7 +148,7 @@ export default function Feature() {
             </div>
             <div className="relative sm:h-fit h-[500px] w-[340px] my-2 sm:max-w-[853px] mx-auto rounded-xl overflow-hidden">
               <iframe
-                src="https://www.youtube.com/embed/gSIofxZUMcU"
+                src="https://www.youtube.com/embed/XFTsP1Jrnjk"
                 title="YouTube Shorts player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -159,7 +159,7 @@ export default function Feature() {
             </div>
             <div className="relative sm:h-fit h-[500px] w-[340px] my-2 sm:max-w-[853px] mx-auto rounded-xl overflow-hidden">
               <iframe
-                src="https://www.youtube.com/embed/gSIofxZUMcU"
+                src="https://www.youtube.com/embed/NYeJl9Pg9Zc"
                 title="YouTube Shorts player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
