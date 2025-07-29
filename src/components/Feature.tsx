@@ -134,6 +134,42 @@ export default function Feature() {
             </p>
           </div>
 
+          <div className="flex flex-col justify-center items-center gap-y-3">
+            <div className="relative sm:h-fit h-[500px] w-[340px] my-2 sm:max-w-[853px] mx-auto rounded-xl overflow-hidden">
+              <iframe
+                src="https://www.youtube.com/embed/gSIofxZUMcU"
+                title="YouTube Shorts player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="absolute top-0 left-0 w-full h-full"
+              ></iframe>
+            </div>
+            <div className="relative sm:h-fit h-[500px] w-[340px] my-2 sm:max-w-[853px] mx-auto rounded-xl overflow-hidden">
+              <iframe
+                src="https://www.youtube.com/embed/gSIofxZUMcU"
+                title="YouTube Shorts player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="absolute top-0 left-0 w-full h-full"
+              ></iframe>
+            </div>
+            <div className="relative sm:h-fit h-[500px] w-[340px] my-2 sm:max-w-[853px] mx-auto rounded-xl overflow-hidden">
+              <iframe
+                src="https://www.youtube.com/embed/gSIofxZUMcU"
+                title="YouTube Shorts player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="absolute top-0 left-0 w-full h-full"
+              ></iframe>
+            </div>
+          </div>
+
           <BentoGrid items={itemsSample} />
 
           <div className="mt-12 text-center">
