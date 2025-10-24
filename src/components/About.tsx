@@ -53,7 +53,7 @@ export default function About() {
                     <ImageGeneration>
                       <div className="md:w-[290px] select-none sm:w-full w-[300px] h-[300px] select-none overflow-hidden rounded-lg shadow-md">
                         <Image
-                          src="https://i.pinimg.com/736x/c0/b0/af/c0b0af6922628f9c47edf29113a8e287.jpg"
+                          src="https://i.pinimg.com/1200x/c5/5d/c7/c55dc7792678cb512627150a353c7ea5.jpg"
                           alt="Vishwanath Biradar"
                           width={500}
                           height={300}
