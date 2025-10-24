@@ -57,7 +57,7 @@ export default function About() {
                           alt="Vishwanath Biradar"
                           width={500}
                           height={300}
-                          className="object-cover scale-102   select-none pb-[16000px] transition-transform duration-300"
+                          className="object-cover scale-102   select-none pb-[1600px] transition-transform duration-300"
                         />
                       </div>
                     </ImageGeneration>
