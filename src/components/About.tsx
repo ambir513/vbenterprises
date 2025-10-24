@@ -53,7 +53,7 @@ export default function About() {
                     <ImageGeneration>
                       <div className="md:w-[290px] select-none sm:w-full w-[300px] h-[300px] select-none overflow-hidden rounded-lg shadow-md">
                         <Image
-                          src="https://scontent.fpnq7-2.fna.fbcdn.net/v/t1.6435-9/179636635_109476344621492_1261522891062766266_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=XehtiA2oH-oQ7kNvwHQiiir&_nc_oc=Adn3dEEdv9p0CVIs3hZywj4LJJZZUCrH--TRtzwtpA67hT97c5iLBQkLIrENJ8rLTcE&_nc_zt=23&_nc_ht=scontent.fpnq7-2.fna&_nc_gid=yLJ7DtP4cj2gWT5AEh4fnw&oh=00_AfQ5zMeldehbfO4MT7O5ZU_4tXyrbr54zM_uulfc8RqHqg&oe=68A6D5FE"
+                          src="https://i.pinimg.com/736x/c0/b0/af/c0b0af6922628f9c47edf29113a8e287.jpg"
                           alt="Vishwanath Biradar"
                           width={500}
                           height={300}
