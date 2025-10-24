@@ -51,7 +51,7 @@ export default function About() {
                 <div className="flex md:flex-row flex-col justify-center items-center gap-3">
                   <div className="pr-0 sm:mr-0 mr-6">
                     <ImageGeneration>
-                      <div className="md:w-[290px] select-none sm:w-full w-[300px] h-[300px] select-none overflow-hidden rounded-lg shadow-md">
+                      <div className="md:w-[290px] select-none sm:w-full w-[300px] h-[280px] select-none overflow-hidden rounded-lg shadow-md">
                         <Image
                           src="https://i.pinimg.com/1200x/c5/5d/c7/c55dc7792678cb512627150a353c7ea5.jpg"
                           alt="Vishwanath Biradar"
