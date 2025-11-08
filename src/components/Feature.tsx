@@ -138,7 +138,7 @@ export default function Feature() {
 
 <div className="relative sm:h-fit h-[500px] w-[340px] my-2 sm:max-w-[853px] mx-auto rounded-xl overflow-hidden">
               <iframe
-                src="https://www.youtube.com/embed/Gx1xN8YbICA"
+                src="https://www.youtube.com/embed/cprP6rA66E4"
                 title="YouTube Shorts player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
