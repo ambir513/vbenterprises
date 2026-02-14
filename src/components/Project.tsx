@@ -5,6 +5,94 @@ import { TracingBeam } from "@/components/ui/tracing-beam";
 import { AnimatedGroup } from "@/components/ui/animated-group";
 import type { Variants } from "framer-motion";
 
+const bentoImages = [
+  {
+    src: "https://res.cloudinary.com/drn7svaxk/image/upload/v1771088094/WhatsApp_Image_2026-02-14_at_9.24.56_PM_zjyw82.jpg",
+    alt: "Interior project showcase 1",
+    colSpan: 2,
+    rowSpan: 2,
+  },
+  {
+    src: "https://res.cloudinary.com/drn7svaxk/image/upload/v1771088093/WhatsApp_Image_2026-02-14_at_9.24.56_PM_1_cbwd00.jpg",
+    alt: "Interior project showcase 2",
+    colSpan: 1,
+    rowSpan: 1,
+  },
+  {
+    src: "https://res.cloudinary.com/drn7svaxk/image/upload/v1771088094/WhatsApp_Image_2026-02-14_at_9.24.54_PM_edpjcf.jpg",
+    alt: "Interior project showcase 3",
+    colSpan: 1,
+    rowSpan: 1,
+  },
+  {
+    src: "https://res.cloudinary.com/drn7svaxk/image/upload/v1771088092/WhatsApp_Image_2026-02-14_at_9.25.03_PM_qx281b.jpg",
+    alt: "Interior project showcase 4",
+    colSpan: 1,
+    rowSpan: 1,
+  },
+  {
+    src: "https://res.cloudinary.com/drn7svaxk/image/upload/v1771088080/WhatsApp_Image_2026-02-14_at_9.25.04_PM_phqkp6.jpg",
+    alt: "Interior project showcase 5",
+    colSpan: 1,
+    rowSpan: 2,
+  },
+  {
+    src: "https://res.cloudinary.com/drn7svaxk/image/upload/v1771088073/WhatsApp_Image_2026-02-14_at_9.25.06_PM_abto31.jpg",
+    alt: "Interior project showcase 6",
+    colSpan: 1,
+    rowSpan: 1,
+  },
+  {
+    src: "https://res.cloudinary.com/drn7svaxk/image/upload/v1771088073/WhatsApp_Image_2026-02-14_at_9.25.08_PM_rqj0tk.jpg",
+    alt: "Interior project showcase 7",
+    colSpan: 2,
+    rowSpan: 1,
+  },
+  {
+    src: "https://res.cloudinary.com/drn7svaxk/image/upload/v1771088073/WhatsApp_Image_2026-02-14_at_9.25.10_PM_dzad18.jpg",
+    alt: "Interior project showcase 8",
+    colSpan: 1,
+    rowSpan: 1,
+  },
+  {
+    src: "https://res.cloudinary.com/drn7svaxk/image/upload/v1771088072/WhatsApp_Image_2026-02-14_at_9.25.17_PM_k5uthn.jpg",
+    alt: "Interior project showcase 9",
+    colSpan: 2,
+    rowSpan: 2,
+  },
+  {
+    src: "https://res.cloudinary.com/drn7svaxk/image/upload/v1771088072/WhatsApp_Image_2026-02-14_at_9.25.13_PM_1_hmyham.jpg",
+    alt: "Interior project showcase 10",
+    colSpan: 1,
+    rowSpan: 1,
+  },
+  {
+    src: "https://res.cloudinary.com/drn7svaxk/image/upload/v1771088072/WhatsApp_Image_2026-02-14_at_9.25.18_PM_avse8d.jpg",
+    alt: "Interior project showcase 11",
+    colSpan: 1,
+    rowSpan: 1,
+  },
+  {
+    src: "https://res.cloudinary.com/drn7svaxk/image/upload/v1771088072/WhatsApp_Image_2026-02-14_at_9.25.13_PM_cdmum2.jpg",
+    alt: "Interior project showcase 12",
+    colSpan: 1,
+    rowSpan: 2,
+  },
+  {
+    src: "https://res.cloudinary.com/drn7svaxk/image/upload/v1771088072/WhatsApp_Image_2026-02-14_at_9.25.11_PM_xqsofo.jpg",
+    alt: "Interior project showcase 13",
+    colSpan: 1,
+    rowSpan: 1,
+  },
+  {
+    src: "https://res.cloudinary.com/drn7svaxk/image/upload/v1771088072/WhatsApp_Image_2026-02-14_at_9.25.12_PM_dolhfg.jpg",
+    alt: "Interior project showcase 14",
+    colSpan: 2,
+    rowSpan: 1,
+  },
+];
+
+
 const transitionVariants: {
   item: Variants;
 } = {
@@ -31,7 +119,38 @@ export default function Project() {
     <section className="py-24 md:py-24 lg:py-28">
       <div className="container px-4 md:px-6 md:w-[1100px] mx-auto">
         <AnimatedGroup variants={transitionVariants}>
-          <div className="prose prose-gray dark:prose-invert max-w-none">
+        
+
+          
+          {/* Bento Image Gallery */}
+          <div className="mt-16 mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold mb-2 tracking-tight text-center">
+              Our Recent Work
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-center mb-8">
+              A glimpse into our latest interior, waterproofing, and civil projects across Mumbai and beyond.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-4 md:auto-rows-[220px] gap-3 max-w-7xl mx-auto">
+              {bentoImages.map((img, index) => (
+                <div
+                  key={index}
+                  className={`relative group rounded-xl overflow-hidden cursor-pointer aspect-[9/16] md:aspect-auto col-span-1 row-span-1 ${
+                    img.colSpan === 2 ? "md:col-span-2" : "md:col-span-1"
+                  } ${img.rowSpan === 2 ? "md:row-span-2" : "md:row-span-1"}`}
+                >
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              ))}
+            </div>
+          </div>
+
+  <div className="prose prose-gray dark:prose-invert max-w-none mt-16">
             <div className="mb-10 text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
                 Projects

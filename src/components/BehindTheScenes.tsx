@@ -45,13 +45,37 @@ const transitionVariants: { item: Variants } = {
 interface VideoItem {
   id: string;
   url: string;
-  title: string;
-  description: string;
-  location: "Bidar";
-  tag: string;
+  title?: string;
+  description?: string;
+  location?: string;
+  tag?: string;
 }
 
 const videos: VideoItem[] = [
+  {
+    id: "new1",
+    url: "https://res.cloudinary.com/drn7svaxk/video/upload/v1771089132/WhatsApp_Video_2026-02-14_at_10.03.13_PM_lvvgzh.mp4",
+  },
+  {
+    id: "new2",
+    url: "https://res.cloudinary.com/drn7svaxk/video/upload/v1771089114/WhatsApp_Video_2026-02-14_at_10.04.47_PM_fgcngk.mp4",
+  },
+  {
+    id: "new3",
+    url: "https://res.cloudinary.com/drn7svaxk/video/upload/v1771089109/WhatsApp_Video_2026-02-14_at_10.04.48_PM_vggzyg.mp4",
+  },
+  {
+    id: "new4",
+    url: "https://res.cloudinary.com/drn7svaxk/video/upload/v1771089104/WhatsApp_Video_2026-02-14_at_10.03.14_PM_pqvav5.mp4",
+  },
+  {
+    id: "new5",
+    url: "https://res.cloudinary.com/drn7svaxk/video/upload/v1771089099/WhatsApp_Video_2026-02-14_at_10.04.46_PM_on3kpz.mp4",
+  },
+  {
+    id: "new6",
+    url: "https://res.cloudinary.com/drn7svaxk/video/upload/v1771088094/WhatsApp_Video_2026-02-14_at_9.25.03_PM_ubcsac.mp4",
+  },
   {
     id: "v1",
     url: "https://res.cloudinary.com/drn7svaxk/video/upload/v1771066472/WhatsApp_Video_2026-02-14_at_3.47.44_PM_gywytx.mp4",
@@ -249,15 +273,21 @@ function VideoCard({ video, index }: { video: VideoItem; index: number }) {
             </Button>
 
             {/* top badges */}
-            <div className="absolute top-3 left-3 flex items-center gap-2 z-10">
-              <Badge variant="default" className="gap-1.5">
-                <MapPin size={12} />
-                {video.location}
-              </Badge>
-              <Badge variant="secondary">
-                {video.tag}
-              </Badge>
-            </div>
+            {(video.location || video.tag) && (
+              <div className="absolute top-3 left-3 flex items-center gap-2 z-10">
+                {video.location && (
+                  <Badge variant="default" className="gap-1.5">
+                    <MapPin size={12} />
+                    {video.location}
+                  </Badge>
+                )}
+                {video.tag && (
+                  <Badge variant="secondary">
+                    {video.tag}
+                  </Badge>
+                )}
+              </div>
+            )}
 
             {/* bottom controls */}
             <div className="absolute bottom-0 left-0 right-0 p-3 z-10">
@@ -349,16 +379,20 @@ function VideoCard({ video, index }: { video: VideoItem; index: number }) {
           </div>
 
           {/* card body using shadcn Card components */}
-          <CardHeader className="pb-0 pt-5 px-5">
-            <CardTitle className="text-lg font-bold leading-snug">
-              {video.title}
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="px-5 pb-5 pt-2">
-            <CardDescription className="leading-relaxed">
-              {video.description}
-            </CardDescription>
-          </CardContent>
+          {(video.title || video.description) && (
+            <>
+              <CardHeader className="pb-0 pt-5 px-5">
+                <CardTitle className="text-lg font-bold leading-snug">
+                  {video.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="px-5 pb-5 pt-2">
+                <CardDescription className="leading-relaxed">
+                  {video.description}
+                </CardDescription>
+              </CardContent>
+            </>
+          )}
         </Card>
       </motion.div>
   );
