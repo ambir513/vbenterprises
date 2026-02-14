@@ -13,6 +13,7 @@ import {
   ActivitySquare,
 } from "lucide-react";
 
+
 const itemsSample: BentoItem[] = [
   {
     title: "Complete Interior Execution",
@@ -193,6 +194,7 @@ export default function Feature() {
               ></iframe>
             </div>
           </div>
+
 
           <BentoGrid items={itemsSample} />
 
