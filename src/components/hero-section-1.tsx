@@ -222,6 +222,7 @@ export function HeroSection() {
 const menuItems = [
   { name: "Features", href: "/feature" },
   { name: "Projects", href: "/projects" },
+  { name: "BTS", href: "/bts" },
   { name: "Quotation", href: "/quotation" },
   { name: "About", href: "/about" },
 ];
