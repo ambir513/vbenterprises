@@ -1,16 +1,35 @@
 "use client";
 
-import { ClerkProvider } from "@clerk/nextjs";
+import {
+  ClerkProvider,
+} from "@clerk/nextjs";
 import { dark } from "@clerk/themes"; // ✅ Only dark is available
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
+
+const ClerkAvailabilityContext = createContext(true);
+
+export function useClerkAvailability() {
+  return useContext(ClerkAvailabilityContext);
+}
+
+function isAllowedClerkHost(hostname: string) {
+  return hostname === "vbenterprises.work" || hostname.endsWith(".vbenterprises.work");
+}
 
 export function ClerkWithTheme({ children }: { children: React.ReactNode }) {
   const { resolvedTheme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
+  const [clerkEnabled, setClerkEnabled] = useState(false);
 
   // ✅ Prevent hydration mismatch
   useEffect(() => {
+    setClerkEnabled(isAllowedClerkHost(window.location.hostname));
     setIsMounted(true);
   }, []);
 
@@ -20,12 +39,18 @@ export function ClerkWithTheme({ children }: { children: React.ReactNode }) {
   const baseTheme = resolvedTheme === "dark" ? dark : undefined;
 
   return (
-    <ClerkProvider
-      appearance={{
-        baseTheme,
-      }}
-    >
-      {children}
-    </ClerkProvider>
+    <ClerkAvailabilityContext.Provider value={clerkEnabled}>
+      {clerkEnabled ? (
+        <ClerkProvider
+          appearance={{
+            baseTheme,
+          }}
+        >
+          {children}
+        </ClerkProvider>
+      ) : (
+        children
+      )}
+    </ClerkAvailabilityContext.Provider>
   );
 }
