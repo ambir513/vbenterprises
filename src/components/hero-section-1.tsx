@@ -12,6 +12,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import type { Variants } from "framer-motion";
 import Image from "next/image";
+import { useClerkAvailability } from "@/utils/ClerkWithTheme";
 
 const transitionVariants: {
   item: Variants;
@@ -228,7 +229,7 @@ const menuItems = [
 ];
 
 export const HeroHeader = () => {
-  const { isSignedIn, user, isLoaded } = useUser();
+  const clerkEnabled = useClerkAvailability();
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
 
@@ -265,31 +266,21 @@ export const HeroHeader = () => {
                 <div className="sm:hidden flex">
                   <ModeToggle />
                 </div>
-                {isLoaded ? (
-                  user ? (
-                    <div className="md:hidden flex  justify-center items-center">
-                      <UserButton
-                        afterSignOutUrl="/"
-                        appearance={{
-                          elements: {
-                            userButtonPopoverCard: "sm:ml-0 sm:mt-0 ml-4 mt-5",
-                          },
-                        }}
-                      />
-                    </div>
-                  ) : (
-                    <button
-                      onClick={() => setMenuState(!menuState)}
-                      aria-label={
-                        menuState == true ? "Close Menu" : "Open Menu"
-                      }
-                      className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
-                    >
-                      <Menu className="in-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                      <X className="group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
-                    </button>
-                  )
-                ) : null}
+                {clerkEnabled ? (
+                  <SignedInMobileActions
+                    menuState={menuState}
+                    setMenuState={setMenuState}
+                  />
+                ) : (
+                  <button
+                    onClick={() => setMenuState(!menuState)}
+                    aria-label={menuState == true ? "Close Menu" : "Open Menu"}
+                    className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
+                  >
+                    <Menu className="in-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
+                    <X className="group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+                  </button>
+                )}
               </div>
             </div>
 
@@ -334,32 +325,28 @@ export const HeroHeader = () => {
                   <ModeToggle />
                 </div>
 
-                {isLoaded ? (
-                  user ? (
-                    <div className="md:flex hidden">
-                      <UserButton afterSignOutUrl="/" />
-                    </div>
-                  ) : (
-                    <Link href="/sign-in">
-                      <TextureButton
-                        size="sm"
-                        className={`font-semibold transition-all duration-200       
+                {clerkEnabled ? (
+                  <SignedInDesktopActions />
+                ) : (
+                  <Link href="/sign-in">
+                    <TextureButton
+                      size="sm"
+                      className={`font-semibold transition-all duration-200       
         active:scale-[0.96]   cursor-pointer ${cn(
           `
                     ${isScrolled && "lg:hidden"}`
         )}`}
-                        onClick={() => {
-                          setTimeout(() => {
-                            window.scroll(0, 0);
-                            setMenuState((prev) => !prev);
-                          }, 500);
-                        }}
-                      >
-                        Sign In
-                      </TextureButton>
-                    </Link>
-                  )
-                ) : null}
+                      onClick={() => {
+                        setTimeout(() => {
+                          window.scroll(0, 0);
+                          setMenuState((prev) => !prev);
+                        }, 500);
+                      }}
+                    >
+                      Sign In
+                    </TextureButton>
+                  </Link>
+                )}
               </div>
             </div>
           </div>
@@ -368,6 +355,69 @@ export const HeroHeader = () => {
     </header>
   );
 };
+
+function SignedInMobileActions({
+  menuState,
+  setMenuState,
+}: {
+  menuState: boolean;
+  setMenuState: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
+  const { user, isLoaded } = useUser();
+
+  if (!isLoaded) return null;
+
+  if (user) {
+    return (
+      <div className="md:hidden flex justify-center items-center">
+        <UserButton
+          afterSignOutUrl="/"
+          appearance={{
+            elements: {
+              userButtonPopoverCard: "sm:ml-0 sm:mt-0 ml-4 mt-5",
+            },
+          }}
+        />
+      </div>
+    );
+  }
+
+  return (
+    <button
+      onClick={() => setMenuState(!menuState)}
+      aria-label={menuState == true ? "Close Menu" : "Open Menu"}
+      className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
+    >
+      <Menu className="in-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
+      <X className="group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+    </button>
+  );
+}
+
+function SignedInDesktopActions() {
+  const { user, isLoaded } = useUser();
+
+  if (!isLoaded) return null;
+
+  if (user) {
+    return (
+      <div className="md:flex hidden">
+        <UserButton afterSignOutUrl="/" />
+      </div>
+    );
+  }
+
+  return (
+    <Link href="/sign-in">
+      <TextureButton
+        size="sm"
+        className="font-semibold transition-all duration-200 active:scale-[0.96] cursor-pointer"
+      >
+        Sign In
+      </TextureButton>
+    </Link>
+  );
+}
 
 const Logo = ({ className }: { className?: string }) => {
   return (

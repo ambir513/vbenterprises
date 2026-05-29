@@ -7,6 +7,8 @@ import type { Variants } from "framer-motion";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import { useClerkAvailability } from "@/utils/ClerkWithTheme";
+import Link from "next/link";
 
 const transitionVariants: {
   item: Variants;
@@ -31,19 +33,45 @@ const transitionVariants: {
 };
 
 export default function Quotation() {
-  const { isSignedIn, isLoaded, user } = useUser();
+  const clerkEnabled = useClerkAvailability();
+
+  return clerkEnabled ? <QuotationWithClerk /> : <QuotationUnavailable />;
+}
+
+function QuotationUnavailable() {
+  return (
+    <div className="flex min-h-[60vh] w-full items-center justify-center px-4 py-20">
+      <div className="max-w-md rounded-2xl border bg-background p-6 text-center shadow-lg">
+        <h2 className="text-2xl font-semibold">Quotation access is unavailable locally</h2>
+        <p className="mt-3 text-sm text-muted-foreground">
+          Clerk production credentials are restricted to the live domain, so sign-in based quotation access is disabled on this origin.
+        </p>
+        <div className="mt-6">
+          <Link href="/sign-in" className="text-primary underline underline-offset-4">
+            Go to sign in
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function QuotationWithClerk() {
   const router = useRouter();
+  const { isSignedIn, isLoaded, user } = useUser();
   const email = user?.emailAddresses[0]?.emailAddress;
-  console.log(user);
+
   useEffect(() => {
-    sendEmail();
-  }, []);
-  async function sendEmail() {
+    if (!isLoaded || !isSignedIn || !email) return;
+    sendEmail(email);
+  }, [email, isLoaded, isSignedIn]);
+
+  async function sendEmail(currentEmail: string) {
     try {
       const res = await fetch("/api/sendmail", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email }),
+        body: JSON.stringify({ email: currentEmail }),
       });
       console.log(res.json());
     } catch (error) {

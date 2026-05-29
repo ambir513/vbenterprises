@@ -53,6 +53,24 @@ interface VideoItem {
 
 const videos: VideoItem[] = [
   {
+    id: "roofseal-1",
+    url: "/video_1.mp4",
+    title: "Dr. Fixit Roofseal Classic Application",
+    description:
+      "Professional waterproofing application using Dr. Fixit Roofseal Classic for durable roof protection and long-term surface sealing.",
+    location: "Bidar",
+    tag: "Waterproofing",
+  },
+  {
+    id: "roofseal-2",
+    url: "/video_2.mp4",
+    title: "Dr. Fixit Roofseal Classic Finishing",
+    description:
+      "Final finishing and coverage checks for a clean, uniform Roofseal Classic application with a professional site finish.",
+    location: "Bidar",
+    tag: "Waterproofing",
+  },
+  {
     id: "new1",
     url: "https://res.cloudinary.com/drn7svaxk/video/upload/v1771089132/WhatsApp_Video_2026-02-14_at_10.03.13_PM_lvvgzh.mp4",
   },
@@ -104,7 +122,8 @@ const videos: VideoItem[] = [
     tag: "Testing",
   },
   {
-    id: "v4",
+    id: "v4"
+    ,
     url: "https://res.cloudinary.com/drn7svaxk/video/upload/v1771066425/WhatsApp_Video_2026-02-14_at_3.47.45_PM_2_dcr73k.mp4",
     title: "Brick Bat Coba Layering & Wetting",
     description:
